@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Navbar from "@/components/Navbar";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const FAQS = [
   { q: "How do I book a service?", a: "Use the Booking page or call +971 50 123 4567." },
@@ -12,15 +15,36 @@ export default function FAQs() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <main className="max-w-5xl mx-auto px-6 py-16">
-        <h1 className="text-3xl font-bold mb-6 text-blue-700">Frequently Asked Questions</h1>
-        <div className="space-y-4">
+      
+      <main className="max-w-4xl mx-auto px-6 py-16">
+        <h1 className="text-4xl md:text-5xl font-bold mb-12 text-blue-700 text-center">
+          Frequently Asked Questions
+        </h1>
+
+        <Accordion type="single" collapsible className="space-y-4">
           {FAQS.map((f, i) => (
-            <div key={i} className="bg-white p-5 rounded-2xl shadow">
-              <h3 className="font-semibold mb-2">{f.q}</h3>
-              <p className="text-gray-700">{f.a}</p>
-            </div>
+            <AccordionItem key={i} value={`item-${i}`} className="bg-white rounded-2xl shadow p-4">
+              <AccordionTrigger className="text-lg md:text-xl font-semibold text-gray-800 hover:text-blue-700 transition-colors">
+                {f.q}
+              </AccordionTrigger>
+              <AccordionContent className="mt-2 text-gray-700">
+                {f.a}
+              </AccordionContent>
+            </AccordionItem>
           ))}
+        </Accordion>
+
+        {/* Optional CTA */}
+        <div className="mt-12 text-center">
+          <p className="text-gray-700 mb-4">
+            Still have questions? Contact us directly for more information.
+          </p>
+          <a
+            href="tel:+971501234567"
+            className="inline-flex items-center px-6 py-3 bg-blue-700 text-white font-medium rounded-lg hover:bg-blue-800 transition-all"
+          >
+            Call Us Now
+          </a>
         </div>
       </main>
     </div>

@@ -8,7 +8,7 @@ export default function About() {
       <main className="max-w-5xl mx-auto px-6 py-16">
         <h1 className="text-3xl font-bold mb-4 text-blue-700">About Us</h1>
         <p className="text-gray-700 mb-4">
-          CleanSmart is a Dubai-based cleaning & maintenance company providing reliable,
+          AlShorooq AlSatae Building Maintenance and Cleaning Services is a Dubai-based cleaning & maintenance company providing reliable,
           professional services to homes and businesses. We use trained staff, modern equipment,
           and eco-friendly products to deliver consistent quality.
         </p>
