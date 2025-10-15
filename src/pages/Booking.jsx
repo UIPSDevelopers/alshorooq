@@ -6,18 +6,19 @@ import * as z from "zod";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
+import { Label } from "@/components/ui/label";
 
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 import {
-  Input,
-  Textarea,
-  Button,
-  Label,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui";
+} from "@/components/ui/select";
+
 
 const bookingSchema = z.object({
   name: z.string().min(1, "Name is required"),

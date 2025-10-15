@@ -1,59 +1,89 @@
-import React, { useState } from "react";
+"use client";
+
+import React from "react";
 import Navbar from "@/components/Navbar";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
-  const [sent, setSent] = useState(false);
-
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    // TODO: wire up to backend / email service
-    console.log("Contact form submitted:", form);
-    setSent(true);
-    setForm({ name: "", email: "", phone: "", message: "" });
-  }
-
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <main className="max-w-3xl mx-auto px-6 py-16">
-        <h1 className="text-3xl font-bold mb-4 text-blue-700">Contact Us</h1>
-        <p className="text-gray-700 mb-6">Questions or requests? Send us a message and we’ll respond promptly.</p>
 
-        {sent && <div className="bg-green-50 text-green-800 p-4 rounded mb-4">Thanks — we received your message.</div>}
+      <main className="max-w-6xl mx-auto px-6 py-16">
+        <section className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-blue-700 mb-4">Get in Touch</h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Have questions or need professional cleaning services? We’re here to help. 
+            Contact us through the details below, and our friendly team will get back to you as soon as possible.
+          </p>
+        </section>
 
-        <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 rounded-2xl shadow">
-          <div>
-            <label className="block text-sm font-medium mb-1">Name</label>
-            <input required name="name" value={form.name} onChange={handleChange}
-              className="w-full border rounded px-3 py-2" />
+        <section className="grid md:grid-cols-2 gap-8 items-start">
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <Card className="p-6 shadow-sm border border-gray-100">
+              <CardContent className="space-y-5">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-blue-100 p-3 rounded-full">
+                    <MapPin className="w-6 h-6 text-blue-700" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-blue-700">Our Office</h3>
+                    <p className="text-gray-600">
+                      AlShorooq AlSatae Building Maintenance <br />
+                      and Cleaning Services, Dubai, UAE
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="bg-blue-100 p-3 rounded-full">
+                    <Phone className="w-6 h-6 text-blue-700" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-blue-700">Phone</h3>
+                    <p className="text-gray-600">+971 50 123 4567</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="bg-blue-100 p-3 rounded-full">
+                    <Mail className="w-6 h-6 text-blue-700" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-blue-700">Email</h3>
+                    <p className="text-gray-600">info@alshorooqcleaning.ae</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="bg-blue-100 p-3 rounded-full">
+                    <Clock className="w-6 h-6 text-blue-700" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-blue-700">Working Hours</h3>
+                    <p className="text-gray-600">Mon – Sat: 8:00 AM – 6:00 PM</p>
+                    <p className="text-gray-600">Closed on Sundays</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium mb-1">Email</label>
-              <input required name="email" value={form.email} onChange={handleChange} type="email"
-                className="w-full border rounded px-3 py-2" />
-            </div>
-            <div>
-              <label className="block text-sm font-medium mb-1">Phone</label>
-              <input required name="phone" value={form.phone} onChange={handleChange}
-                className="w-full border rounded px-3 py-2" />
-            </div>
+          {/* Google Map */}
+          <div className="rounded-2xl overflow-hidden shadow-md border border-gray-100">
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps?q=dubai,+UAE&output=embed"
+              width="100%"
+              height="400"
+              allowFullScreen=""
+              loading="lazy"
+              className="w-full h-[400px] border-0"
+            ></iframe>
           </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-1">Message</label>
-            <textarea required name="message" value={form.message} onChange={handleChange}
-              className="w-full border rounded px-3 py-2 h-32" />
-          </div>
-
-          <button className="bg-blue-700 text-white px-5 py-2 rounded">Send Message</button>
-        </form>
+        </section>
       </main>
     </div>
   );

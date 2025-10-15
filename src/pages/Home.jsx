@@ -6,18 +6,35 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Leaf, Users, CalendarCheck, Smile } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Check } from "lucide-react";
 
 export default function Home() {
   const features = [
-    { title: "Eco-Friendly Products", description: "Safe for your health and the environment." },
-    { title: "Professional Team", description: "Trained and vetted cleaning experts." },
-    { title: "Flexible Scheduling", description: "Services tailored to your convenience." },
-    { title: "Satisfaction Guarantee", description: "We ensure you're delighted with our work." },
-  ];
+  {
+    title: "Eco-Friendly Products",
+    description: "Safe for your health and the environment.",
+    icon: Leaf,
+  },
+  {
+    title: "Professional Team",
+    description: "Trained and vetted cleaning experts.",
+    icon: Users,
+  },
+  {
+    title: "Flexible Scheduling",
+    description: "Services tailored to your convenience.",
+    icon: CalendarCheck,
+  },
+  {
+    title: "Satisfaction Guarantee",
+    description: "We ensure you're delighted with our work.",
+    icon: Smile,
+  },
+];
 
   const faqs = [
     { question: "How do I book a service?", answer: "Use our Booking page or call +971 50 123 4567." },
@@ -31,24 +48,40 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <ServicesSection />
-        <TestimonialsSection />
+        
 
         {/* Why Choose Us Section */}
         <section className="py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-6 text-center">
-            <h2 className="text-3xl font-bold text-blue-700 mb-8">Why Choose Us</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-              {features.map((feature, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <CardTitle className="text-xl font-semibold text-blue-700">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardDescription className="text-gray-600">{feature.description}</CardDescription>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        <h2 className="text-3xl font-bold text-blue-700 mb-10">
+          Why Choose Us
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <Card
+                key={index}
+                className="p-6 hover:shadow-lg transition-all border border-gray-100 rounded-2xl"
+              >
+                <CardContent className="flex flex-col items-center text-center space-y-3">
+                  <div className="bg-blue-100 p-4 rounded-full">
+                    <Icon className="w-10 h-10 text-blue-700" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold text-blue-700">
+                    {feature.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-600">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+        <TestimonialsSection />
 
         {/* FAQ Section */}
         <section className="py-20 bg-gray-50">
