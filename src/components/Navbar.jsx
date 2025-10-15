@@ -29,7 +29,7 @@ export default function Navbar() {
         {/* LOGO + COMPANY NAME */}
         <Link to="/" className="flex items-center gap-3">
           <img
-            src="src/assets/logo.png"
+            src="https://media.canva.com/v2/image-resize/format:PNG/height:369/quality:100/uri:ifs%3A%2F%2FM%2F680a9989-a488-4907-827f-c8973c4fcb6c/watermark:F/width:369?csig=AAAAAAAAAAAAAAAAAAAAAIB1SSqAY5FNcorzV-9BhKPtqsk7f79-DltgEr-xMJ6K&exp=1760521559&osig=AAAAAAAAAAAAAAAAAAAAAGYepOFM-KBwDQYRIdp_RSI_U6-FOlK67PBNO2mRv64-&signer=media-rpc&x-canva-quality=screen"
             alt="AlShorooq Logo"
             className="w-16 h-16 object-contain"
           />
