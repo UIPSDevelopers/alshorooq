@@ -12,10 +12,13 @@ export default function Contact() {
 
       <main className="max-w-6xl mx-auto px-6 py-16">
         <section className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-blue-700 mb-4">Get in Touch</h1>
+          <h1 className="text-4xl font-bold text-blue-700 mb-4">
+            Get in Touch
+          </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Have questions or need professional cleaning services? We’re here to help. 
-            Contact us through the details below, and our friendly team will get back to you as soon as possible.
+            Have questions or need professional cleaning services? We’re here to
+            help. Contact us through the details below, and our friendly team
+            will get back to you as soon as possible.
           </p>
         </section>
 
@@ -62,8 +65,12 @@ export default function Contact() {
                     <Clock className="w-6 h-6 text-blue-700" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-blue-700">Working Hours</h3>
-                    <p className="text-gray-600">Mon – Sat: 8:00 AM – 6:00 PM</p>
+                    <h3 className="font-semibold text-blue-700">
+                      Working Hours
+                    </h3>
+                    <p className="text-gray-600">
+                      Mon – Sat: 8:00 AM – 6:00 PM
+                    </p>
                     <p className="text-gray-600">Closed on Sundays</p>
                   </div>
                 </div>
@@ -74,11 +81,10 @@ export default function Contact() {
           {/* Google Map */}
           <div className="rounded-2xl overflow-hidden shadow-md border border-gray-100">
             <iframe
-              title="Google Map"
-              src="https://www.google.com/maps?q=dubai,+UAE&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.4721273016007!2d55.365148!3d25.288337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE3JzE4LjAiTiA1NcKwMjEnNTQuNSJF!5e0!3m2!1sen!2sae!4v1760854039982!5m2!1sen!2sae"
               width="100%"
               height="400"
-              allowFullScreen=""
+              allowfullscreen=""
               loading="lazy"
               className="w-full h-[400px] border-0"
             ></iframe>

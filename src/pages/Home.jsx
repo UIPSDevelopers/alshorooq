@@ -50,7 +50,7 @@ export default function Home() {
         <ServicesSection />
         
 
-        {/* Why Choose Us Section */}
+        {/* Why Choose Us Section
         <section className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold text-blue-700 mb-10">
@@ -80,10 +80,10 @@ export default function Home() {
           })}
         </div>
       </div>
-    </section>
+    </section> */}
         <TestimonialsSection />
 
-        {/* FAQ Section */}
+        {/* FAQ Section
         <section className="py-20 bg-gray-50">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-blue-700 mb-8 text-center">Frequently Asked Questions</h2>
@@ -98,7 +98,7 @@ export default function Home() {
               ))}
             </Accordion>
           </div>
-        </section>
+        </section> */}
 
         {/* Call to Action Section */}
         <section className="py-20 bg-blue-700 text-white">

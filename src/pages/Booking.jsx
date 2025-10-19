@@ -19,7 +19,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-
 const bookingSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email"),
@@ -74,7 +73,9 @@ export default function Booking() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <main className="max-w-3xl mx-auto px-6 py-16">
-        <h1 className="text-3xl font-bold mb-4 text-blue-700">Book a Service</h1>
+        <h1 className="text-3xl font-bold mb-4 text-blue-700">
+          Book a Service
+        </h1>
         <p className="text-gray-700 mb-6">
           Fill the form below and we'll contact you to confirm the booking.
         </p>
@@ -92,13 +93,11 @@ export default function Booking() {
           {/* Name */}
           <div>
             <Label htmlFor="name">Full Name</Label>
-            <Input
-              id="name"
-              {...register("name")}
-              placeholder="John Doe"
-            />
+            <Input id="name" {...register("name")} placeholder="John Doe" />
             {errors.name && (
-              <span className="text-red-600 text-sm">{errors.name.message}</span>
+              <span className="text-red-600 text-sm">
+                {errors.name.message}
+              </span>
             )}
           </div>
 
@@ -113,15 +112,23 @@ export default function Booking() {
                 placeholder="email@example.com"
               />
               {errors.email && (
-                <span className="text-red-600 text-sm">{errors.email.message}</span>
+                <span className="text-red-600 text-sm">
+                  {errors.email.message}
+                </span>
               )}
             </div>
 
             <div>
               <Label htmlFor="phone">Phone</Label>
-              <Input id="phone" {...register("phone")} placeholder="+971 50 123 4567" />
+              <Input
+                id="phone"
+                {...register("phone")}
+                placeholder="+971 50 123 4567"
+              />
               {errors.phone && (
-                <span className="text-red-600 text-sm">{errors.phone.message}</span>
+                <span className="text-red-600 text-sm">
+                  {errors.phone.message}
+                </span>
               )}
             </div>
           </div>
@@ -133,17 +140,26 @@ export default function Booking() {
               name="service"
               control={control}
               render={({ field }) => (
-                <Select {...field}>
+                <Select value={field.value} onValueChange={field.onChange}>
                   <SelectTrigger>
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Residential Cleaning">Residential Cleaning</SelectItem>
-                    <SelectItem value="Office / Commercial Cleaning">Office / Commercial Cleaning</SelectItem>
-                    <SelectItem value="Move-in / Move-out Cleaning">Move-in / Move-out Cleaning</SelectItem>
-                    <SelectItem value="Deep Cleaning">Deep Cleaning</SelectItem>
-                    <SelectItem value="Carpet & Window Cleaning">Carpet & Window Cleaning</SelectItem>
-                    <SelectItem value="Specialty Services">Specialty Services</SelectItem>
+                    <SelectItem value="Residential Cleaning">
+                      Home Cleaning
+                    </SelectItem>
+                    <SelectItem value="A/C Cleaning & Maintenance">
+                      Office & Commercial Cleaning
+                    </SelectItem>
+                    <SelectItem value="Move-in / Move-out Cleaning">
+                      Deep & Specialized Cleaning
+                    </SelectItem>
+                    <SelectItem value="Deep Cleaning">
+                      Maintenance Support
+                    </SelectItem>
+                    <SelectItem value="Carpet & Window Cleaning">
+                      Custom Packages
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               )}
@@ -159,10 +175,18 @@ export default function Booking() {
           {/* Notes */}
           <div>
             <Label htmlFor="notes">Additional Notes</Label>
-            <Textarea id="notes" {...register("notes")} rows={5} placeholder="Any additional requests..." />
+            <Textarea
+              id="notes"
+              {...register("notes")}
+              rows={5}
+              placeholder="Any additional requests..."
+            />
           </div>
 
-          <Button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white">
+          <Button
+            type="submit"
+            className="w-full bg-blue-700 hover:bg-blue-800 text-white"
+          >
             Submit Booking
           </Button>
         </form>

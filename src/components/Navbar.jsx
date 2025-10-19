@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Menu, Phone, Mail } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -15,12 +15,9 @@ import { Button } from "@/components/ui/button";
 export default function Navbar() {
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Pricing", path: "/pricing" },
-    { name: "FAQs", path: "/faqs" },
+    { name: "About Us", path: "/about" },
+    { name: "Our Services", path: "/services" },
     { name: "Contact", path: "/contact" },
-    { name: "Testimonials", path: "/testimonials" },
   ];
 
   return (
@@ -29,7 +26,7 @@ export default function Navbar() {
         {/* LOGO + COMPANY NAME */}
         <Link to="/" className="flex items-center gap-3">
           <img
-            src="https://media.canva.com/v2/image-resize/format:PNG/height:369/quality:100/uri:ifs%3A%2F%2FM%2F680a9989-a488-4907-827f-c8973c4fcb6c/watermark:F/width:369?csig=AAAAAAAAAAAAAAAAAAAAAIB1SSqAY5FNcorzV-9BhKPtqsk7f79-DltgEr-xMJ6K&exp=1760521559&osig=AAAAAAAAAAAAAAAAAAAAAGYepOFM-KBwDQYRIdp_RSI_U6-FOlK67PBNO2mRv64-&signer=media-rpc&x-canva-quality=screen"
+            src="https://i.imgur.com/WbnDL52.png"
             alt="AlShorooq Logo"
             className="w-16 h-16 object-contain"
           />
@@ -73,6 +70,22 @@ export default function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
+        {/* CONTACT INFO (Desktop only) */}
+        <div className="hidden md:flex items-center gap-6 text-gray-700 text-sm">
+          <a
+            href="tel:+971501234567"
+            className="flex items-center gap-2 hover:text-blue-700 transition-colors"
+          >
+            <Phone size={18} /> +971 50 123 4567
+          </a>
+          <a
+            href="mailto:info@alshorooq.com"
+            className="flex items-center gap-2 hover:text-blue-700 transition-colors"
+          >
+            <Mail size={18} /> info@alshorooq.com
+          </a>
+        </div>
+
         {/* MOBILE MENU */}
         <Sheet>
           <SheetTrigger asChild>
@@ -102,6 +115,23 @@ export default function Navbar() {
                   {l.name}
                 </NavLink>
               ))}
+
+              {/* Contact Info (Mobile) */}
+              <div className="mt-6 border-t pt-4 text-gray-700 text-sm space-y-3">
+                <a
+                  href="tel:+971501234567"
+                  className="flex items-center gap-2 hover:text-blue-700"
+                >
+                  <Phone size={18} /> +971 50 123 4567
+                </a>
+                <a
+                  href="mailto:info@alshorooq.com"
+                  className="flex items-center gap-2 hover:text-blue-700"
+                >
+                  <Mail size={18} /> info@alshorooq.com
+                </a>
+              </div>
+
               <Button
                 asChild
                 className="mt-4 bg-blue-700 hover:bg-blue-800 text-white w-full"

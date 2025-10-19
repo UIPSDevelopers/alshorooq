@@ -5,9 +5,9 @@ import { Phone, Mail } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-gray-200 py-12">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-12">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Company Info */}
-        <div className="md:w-1/3">
+        <div>
           <h2 className="text-xl font-bold text-white mb-2">
             AlShorooq AlSatae Building Maintenance and Cleaning Services
           </h2>
@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-5 h-5" />
-              <a href="mailto:info@alshorooq.com" className="hover:text-white">
+              <a href="mailto:info@alshorooq.ae" className="hover:text-white">
                 info@alshorooq.ae
               </a>
             </div>
@@ -28,7 +28,7 @@ export default function Footer() {
         </div>
 
         {/* Quick Links */}
-        <div className="md:w-1/3">
+        <div>
           <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
           <ul className="flex flex-col gap-2">
             <li>
@@ -38,17 +38,12 @@ export default function Footer() {
             </li>
             <li>
               <Link to="/about" className="hover:text-white">
-                About
+                About Us
               </Link>
             </li>
             <li>
               <Link to="/services" className="hover:text-white">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link to="/pricing" className="hover:text-white">
-                Pricing
+                Our Services
               </Link>
             </li>
             <li>
@@ -59,8 +54,8 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Address or Additional Info */}
-        <div className="md:w-1/3">
+        {/* Address */}
+        <div>
           <h3 className="text-lg font-semibold text-white mb-3">Address</h3>
           <p className="text-gray-300 mb-2">
             Dubai, United Arab Emirates
@@ -68,6 +63,22 @@ export default function Footer() {
           <p className="text-gray-300">
             © {new Date().getFullYear()} AlShorooq AlSatae. All rights reserved.
           </p>
+        </div>
+
+        {/* Small Google Map */}
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-3">Location</h3>
+          <div className="w-full h-32 rounded overflow-hidden shadow-md border border-gray-700">
+            <iframe
+              title="Google Map"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.4721273016007!2d55.365148!3d25.288337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE3JzE4LjAiTiA1NcKwMjEnNTQuNSJF!5e0!3m2!1sen!2sae!4v1760854039982!5m2!1sen!2sae"
+              width="100%"
+              height="100%"
+              allowFullScreen=""
+              loading="lazy"
+              className="border-0"
+            ></iframe>
+          </div>
         </div>
       </div>
     </footer>

@@ -29,7 +29,6 @@ export default function TestimonialsSection() {
               <p className="text-gray-700 mb-4">“{t.text}”</p>
               <p className="font-semibold">{t.name}</p>
               <p className="text-sm text-gray-500">{t.title}</p>
-              asd
             </div>
           ))}
         </div>
