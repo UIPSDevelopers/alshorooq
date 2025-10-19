@@ -20,19 +20,6 @@ const TESTIMONIALS = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-16">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-bold mb-8 text-blue-700">Testimonials</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((t) => (
-            <div key={t.name} className="bg-white p-6 rounded-2xl shadow">
-              <p className="text-gray-700 mb-4">“{t.text}”</p>
-              <p className="font-semibold">{t.name}</p>
-              <p className="text-sm text-gray-500">{t.title}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+<></>
   );
 }

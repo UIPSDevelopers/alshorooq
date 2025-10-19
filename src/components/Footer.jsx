@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-gray-200 py-12">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Company Info */}
         <div>
           <h2 className="text-xl font-bold text-white mb-2">
@@ -15,7 +14,7 @@ export default function Footer() {
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5" />
               <a href="tel:+971501234567" className="hover:text-white">
-                +971 50 123 4567
+                +971 52 524 3843
               </a>
             </div>
             <div className="flex items-center gap-2">
@@ -25,33 +24,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-        </div>
-
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
-          <ul className="flex flex-col gap-2">
-            <li>
-              <Link to="/" className="hover:text-white">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="hover:text-white">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link to="/services" className="hover:text-white">
-                Our Services
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="hover:text-white">
-                Contact
-              </Link>
-            </li>
-          </ul>
         </div>
 
         {/* Address */}

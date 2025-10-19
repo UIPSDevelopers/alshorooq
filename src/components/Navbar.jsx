@@ -76,7 +76,7 @@ export default function Navbar() {
             href="tel:+971501234567"
             className="flex items-center gap-2 hover:text-blue-700 transition-colors"
           >
-            <Phone size={18} /> +971 50 123 4567
+            <Phone size={18} /> +971 52 524 3843
           </a>
           <a
             href="mailto:info@alshorooq.com"
