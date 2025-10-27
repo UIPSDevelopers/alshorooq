@@ -7,7 +7,6 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
 import { Label } from "@/components/ui/label";
-
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -25,6 +24,7 @@ const bookingSchema = z.object({
   phone: z.string().min(1, "Phone is required"),
   service: z.string(),
   date: z.string().optional(),
+  time: z.string().optional(), // ✅ new field
   notes: z.string().optional(),
 });
 
@@ -45,6 +45,7 @@ export default function Booking() {
       phone: "",
       service: "Residential Cleaning",
       date: "",
+      time: "", // ✅ default value
       notes: "",
     },
   });
@@ -52,10 +53,10 @@ export default function Booking() {
   const onSubmit = (data) => {
     emailjs
       .send(
-        "service_9blgqbn", // your service ID
-        "template_k49zza2", // your template ID
+        "service_9blgqbn",
+        "template_k49zza2",
         data,
-        "zD0Wm7YYQEtavrgxN" // your public key
+        "zD0Wm7YYQEtavrgxN"
       )
       .then(
         () => {
@@ -73,9 +74,7 @@ export default function Booking() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <main className="max-w-3xl mx-auto px-6 py-16">
-        <h1 className="text-3xl font-bold mb-4 text-blue-700">
-          Book a Service
-        </h1>
+        <h1 className="text-3xl font-bold mb-4 text-blue-700">Book a Service</h1>
         <p className="text-gray-700 mb-6">
           Fill the form below and we'll contact you to confirm the booking.
         </p>
@@ -95,9 +94,7 @@ export default function Booking() {
             <Label htmlFor="name">Full Name</Label>
             <Input id="name" {...register("name")} placeholder="John Doe" />
             {errors.name && (
-              <span className="text-red-600 text-sm">
-                {errors.name.message}
-              </span>
+              <span className="text-red-600 text-sm">{errors.name.message}</span>
             )}
           </div>
 
@@ -166,10 +163,16 @@ export default function Booking() {
             />
           </div>
 
-          {/* Date */}
-          <div>
-            <Label htmlFor="date">Preferred Date</Label>
-            <Input id="date" type="date" {...register("date")} />
+          {/* Date & Time */}
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <Label htmlFor="date">Date</Label>
+              <Input id="date" type="date" {...register("date")} />
+            </div>
+            <div>
+              <Label htmlFor="time">Time</Label>
+              <Input id="time" type="time" {...register("time")} />
+            </div>
           </div>
 
           {/* Notes */}
