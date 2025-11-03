@@ -25,6 +25,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { Check } from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Home() {
   const features = [
