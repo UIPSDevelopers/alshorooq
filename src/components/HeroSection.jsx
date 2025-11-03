@@ -38,7 +38,7 @@ export default function HeroSection() {
             size="lg"
             className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-6 text-base"
           >
-            Request Your Free Quote
+            <Link to="/booking">Request Your Free Quote</Link>
           </Button>
         </motion.div>
 

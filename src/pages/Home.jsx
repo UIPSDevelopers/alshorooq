@@ -159,7 +159,7 @@ export default function Home() {
                 className="bg-blue-700 hover:bg-blue-800 text-white px-10"
                 asChild
               >
-                <a href="/booking">Book Now</a>
+                <Link to="/booking">Book Now</Link>
               </Button>
             </div>
           </div>
@@ -229,7 +229,7 @@ export default function Home() {
               size="lg"
               className="bg-white text-blue-700 hover:bg-gray-100"
             >
-              Get a Free Quote
+              <Link to="/booking">Get a Free Quote</Link>
             </Button>
           </div>
         </section>
