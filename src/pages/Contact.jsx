@@ -64,7 +64,7 @@ export default function Contact() {
                         Email
                       </h3>
                       <p className="text-gray-700 text-lg">
-                        info@alshorooqcleaning.ae
+                        info@alshorooq-alsatae.ae
                       </p>
                     </div>
                   </div>
