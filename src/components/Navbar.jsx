@@ -82,7 +82,7 @@ export default function Navbar() {
             href="mailto:info@alshorooq.com"
             className="flex items-center gap-2 hover:text-blue-700 transition-colors"
           >
-            <Mail size={18} /> info@alshorooq.com
+            <Mail size={18} /> info@alshorooq-alsatae.ae
           </a>
         </div>
 
