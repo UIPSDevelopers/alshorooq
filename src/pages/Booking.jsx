@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import * as z from "zod";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import emailjs from "@emailjs/browser";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -50,31 +49,34 @@ export default function Booking() {
     },
   });
 
-  const onSubmit = (data) => {
-    emailjs
-      .send(
-        "service_fbwoqte",
-        "template_kmjexqs",
-        data,
-        "4qxNukiA-YroMaD4_"
-      )
-      .then(
-        () => {
-          setSubmitted(true);
-          reset();
-        },
-        (err) => {
-          console.error("Email send error:", err);
-          alert("Failed to send booking. Please try again.");
-        }
-      );
+  const onSubmit = async (data) => {
+    try {
+      const resp = await fetch("/api/send-booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await resp.json();
+      if (!resp.ok || !json.ok) {
+        console.error("Resend error:", json.error);
+        alert("Failed to send booking. Please try again.");
+        return;
+      }
+      setSubmitted(true);
+      reset();
+    } catch (err) {
+      console.error("Network error:", err);
+      alert("Network error. Please try again.");
+    }
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <main className="max-w-3xl mx-auto px-6 py-16">
-        <h1 className="text-3xl font-bold mb-4 text-blue-700">Book a Service</h1>
+        <h1 className="text-3xl font-bold mb-4 text-blue-700">
+          Book a Service
+        </h1>
         <p className="text-gray-700 mb-6">
           Fill the form below and we'll contact you to confirm the booking.
         </p>
@@ -94,7 +96,9 @@ export default function Booking() {
             <Label htmlFor="name">Full Name</Label>
             <Input id="name" {...register("name")} placeholder="John Doe" />
             {errors.name && (
-              <span className="text-red-600 text-sm">{errors.name.message}</span>
+              <span className="text-red-600 text-sm">
+                {errors.name.message}
+              </span>
             )}
           </div>
 
