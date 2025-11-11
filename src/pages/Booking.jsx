@@ -53,10 +53,10 @@ export default function Booking() {
   const onSubmit = (data) => {
     emailjs
       .send(
-        "service_9blgqbn",
-        "template_k49zza2",
+        "service_qgkjxfm",
+        "template_jluoi0n",
         data,
-        "zD0Wm7YYQEtavrgxN"
+        "W8J4vcG4Rif92N7L1"
       )
       .then(
         () => {
