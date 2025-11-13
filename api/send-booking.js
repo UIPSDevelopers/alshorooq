@@ -189,9 +189,9 @@ export default async function handler(req, res) {
                 <tr>
                   <td style="padding-top:18px;padding-bottom:8px;" align="center">
                     <a
-                      href="mailto:${encodeURI(
-                        toAddr || "info@alshorooq-alsatae.ae"
-                      )}"
+                      href="mailto:${escapeHtml(
+                            email
+                          )}"
                       style="display:inline-block;padding:10px 20px;border-radius:999px;background-color:#1d4ed8;color:#ffffff;font-size:13px;font-weight:500;text-decoration:none;"
                     >
                       Reply to Customer
